@@ -10,7 +10,7 @@ test('subtract 1 + 2 to equal -1', () => {
 });
 
 test('divide 1 / 2 to equal 0.5', () => {
-  expect(divide(1, 2)).toBe(0.4);
+  expect(divide(1, 2)).toBe(0.5);
 });
 
 test('multiply 1 * 2 to equal 2', () => {
