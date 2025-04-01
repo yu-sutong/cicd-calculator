@@ -1,0 +1,20 @@
+# .github/workflows/ci.yml
+name: CI/CD Pipeline
+on: [pull_request, workflow_dispatch]
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: |
+          yarn
+      - name: Run unit tests
+        run: |
+          NODE_ENV=production yarn test
